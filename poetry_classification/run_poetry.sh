@@ -1,0 +1,16 @@
+python3 run_poetry_classifier.py \
+    --model_name_or_path="bakrianoo/sinai-voice-ar-stt" \
+    --output_dir=poetry-classification \
+    --freeze_feature_extractor \
+    --num_train_epochs="5" \
+    --per_device_train_batch_size="8" \
+    --preprocessing_num_workers="1" \
+    --learning_rate="3e-5" \
+    --warmup_steps="5" \
+    --evaluation_strategy="steps"\
+    --save_steps="1000" \
+    --eval_steps="1000" \
+    --save_total_limit="1" \
+    --logging_steps="1000" \
+    --do_eval \
+    --do_train \
