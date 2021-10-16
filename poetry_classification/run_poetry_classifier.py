@@ -363,7 +363,7 @@ def main():
         mask_time_prob=0.05,
         layerdrop=0.01,
         gradient_checkpointing=True,
-        num_attention_heads=8,
+        num_attention_heads=4,
     )
 
     if model_args.freeze_feature_extractor:

@@ -3,7 +3,7 @@ python3 run_poetry_classifier.py \
     --output_dir=poetry-classification \
     --freeze_feature_extractor \
     --num_train_epochs="5" \
-    --per_device_train_batch_size="8" \
+    --per_device_train_batch_size="2" \
     --preprocessing_num_workers="1" \
     --learning_rate="3e-5" \
     --warmup_steps="5" \
