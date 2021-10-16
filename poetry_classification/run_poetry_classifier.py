@@ -210,7 +210,7 @@ class DataCollatorCTCWithPadding:
 
         def onehot(lbl):
             print(lbl)
-            onehot = [0] * 2
+            onehot = [0] * 16
             onehot[int(lbl)] = 1
             return onehot
 
@@ -363,6 +363,7 @@ def main():
         mask_time_prob=0.05,
         layerdrop=0.01,
         gradient_checkpointing=True,
+        num_attention_heads=8,
     )
 
     if model_args.freeze_feature_extractor:
@@ -383,7 +384,7 @@ def main():
     }
 
     labels = {
-        bahr: 0 if bahr_index % 2 == 0 else 1
+        bahr: bahr_index
         for bahr_index, bahr in enumerate(sorted(set(train_metadata["Bahr"])))
     }
     print("labels are:", labels)
